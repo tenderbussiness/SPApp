@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfAppThread.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppThread"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Name="btnRun"
+                Content="Додати дані" HorizontalAlignment="Left" 
+                Margin="223,38,0,0" VerticalAlignment="Top" 
+                Height="33" Width="129" FontSize="14" Click="btnRun_Click"/>
+
+        <TextBox Name="txtCount" HorizontalAlignment="Left" Margin="40,42,0,0"
+                 FontSize="18" TextWrapping="Wrap" Text="10" 
+                 VerticalAlignment="Top" Width="158"/>
+
+        <Grid HorizontalAlignment="Left" Height="35" 
+              Margin="26,363,0,0" VerticalAlignment="Top"
+              Width="436">
+            <ProgressBar Minimum="0" Maximum="100" Value="0" Name="pbStatus" />
+            <TextBlock 
+                Text="{Binding ElementName=pbStatus, Path=Value, StringFormat={}{0:0}}" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+        <Button x:Name="btnPause"
+            Content="Призупинити" HorizontalAlignment="Left" 
+            Margin="40,101,0,0" VerticalAlignment="Top" 
+            Height="33" Width="116" FontSize="14" Click="btnPause_Click"/>
+        <Button x:Name="btnBreak"
+            Content="Перервать" HorizontalAlignment="Left" 
+            Margin="186,101,0,0" VerticalAlignment="Top" 
+            Height="33" Width="116" FontSize="14" Click="btnBreak_Click"/>
+        <Button x:Name="btnRun_Copy"
+            Content="Додати дані Dapper" HorizontalAlignment="Left" 
+            Margin="375,38,0,0" VerticalAlignment="Top" 
+            Height="33" Width="162" FontSize="14" Click="btnRun_Copy_Click"/>
+
+
+
+
+    </Grid>
+</Window>
